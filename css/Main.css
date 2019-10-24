@@ -15,6 +15,11 @@
     font-family: GillSansStd;
     src: url('Fonts/GILLSANS.ttf');
 }
+@font-face {
+    font-family: aileron;
+    src: url('Fonts/aileron.heavy.otf');
+}
+
 a{
 	color: white;
 }
@@ -91,6 +96,7 @@ footer img{
     text-align: center;
     font-family: sans-serif;
     text-transform: uppercase;
+    margin-top:65px;
 }
 .navigation-box{
 	background-color: white;
@@ -228,3 +234,12 @@ position: absolute;
 	font-size: 30px;
 }
 
+#changetext{
+	font-family: aileron;
+	position: absolute;
+    bottom: 130px;
+    width: 1040px;
+    font-size: 110px;
+    font-weight: bold;
+    color: #152a6b;
+}
