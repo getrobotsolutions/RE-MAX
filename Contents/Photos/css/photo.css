@@ -1,0 +1,39 @@
+/* Font Family
+================================================== */
+
+
+
+/* Global Styles
+================================================== */
+.main-content {padding-top: 0px;     height: 1600px;border-bottom:0;}
+.container {
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+    color:#fff;
+    font-size:105%;
+    font-family:"Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:300;
+    letter-spacing:.025rem;
+    line-height:1.618;
+    padding:1rem 0;
+
+}
+
+/* Setup
+================================================== */
+
+.container {
+    position:relative;
+    //margin:0 auto;
+    //margin: 20px;
+    margin-top: 80px;
+    margin-left: 20px !important;
+    /* background-color:#FF6600;*/
+
+
+}
+.column { width:inherit; }
+
+
+
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/Language.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/custom.js"></script>
+    <script src="../../Scripts/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../maincontents.js"></script>
+    <script src="../../boots/js/bootstrap.min.js"></script>
+    
+    
+    <link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+    <link href="css/photo.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+
+<body onload="" onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;"  oncontextmenu="return false;" style="-ms-user-select:none;padding: 0; margin: 0; background-repeat: no-repeat; width: 1080px; height: 1920px; " class="noselect unselectable">
+<header>
+  <div class="logo" src onclick="FC_ContentsCall('Home')">
+    <img src="../../assets/logo.png">
+  </div>
+</header>
+<nav>
+  <img src="../../assets/icons/home.png" class="img-home" onclick="FC_ContentsCall('Home')">
+</nav>
+<section class="main-content">
+  <div class="bmg">
+    <div style="text-align: center;padding-top: 50px;">
+        <figure >
+            <figcaption class="text-center font-italic"></figcaption>
+            <img
+                    id="big"
+                    src=""
+                    alt=""
+                    class="img-fluid d-block mx-auto">
+        </figure>
+    </div>
+    <br>
+
+    <div class="row-fluid selectable" id="myDraggable" style="margin-top: 50px; text-align: center;">
+
+    </div>
+
+  </div>
+</section>
+
+<div id="dialog-overlay"></div>
+      <div id="dialog-box">
+        
+      </div>
+
+
+</body>
+
+<script type="application/javascript">
+      $(document).ready(function(){
+        
+        $.ajax({
+          type: "POST",
+          url: "http://robotaisolutions.com/robot-work/selfie-emails/fetch-emails-data.php",
+        
+          success: function (data) {
+            data=JSON.parse(data);
+            $('#big').attr('src',"../Resources/Photo/" +  data[0]['filename'] + ".jpg");
+            for (var i = 0; i < data.length; i++) {
+              $('#myDraggable').append("<figure class='col-2 col-md-1 px-1'><img src='"+"../Resources/Photo/" + data[i]['filename'] + ".jpg" + "' alt='' onclick='changePicture(this)' class='img-thumbnail'></figure>");
+            }
+          }
+        });
+
+
+          $("#myDraggable").mouseover(function() {
+              $("figcaption:first").removeClass("animateFigcaption");
+          });
+
+          /*$("#myDraggable").draggable({
+              scroll: true,
+              axis: "x",
+              cursor: "move"
+          });*/
+
+          $('.img-thumbnail').click(function() {
+              $(".selectable").find("img").removeClass('ui-selected');
+              $(this).addClass('ui-selected');
+          });
+      });
+
+  
+  function changePicture(smallPicture) {
+
+    $("#big").attr("src", smallPicture.src);
+
+    $($("figcaption")[0]).html(smallPicture.alt);
+    $("figcaption:first").addClass("animateFigcaption");
+}
+
+</script>
+
+<style type="text/css">
+  figure { overflow: hidden;
+    -webkit-margin-before: 0; -webkit-margin-after: 0; -webkit-margin-start: 0; -webkit-margin-end: 0;
+}
+h1, figcaption, footer { font-size: 180%; text-shadow: 2px 2px 5px black;}
+figcaption { font-size: 120%; }
+footer { font-size: 80%; }
+#big { max-height: 60vh; max-width: 1080px;  box-shadow: -2px 4px 8px 0 black, 4px 6px 8px 0 black; }
+.row-fluid { white-space: nowrap; }
+.row-fluid .col-2 { display: inline-block; width: 200px}
+.img-thumbnail { padding: .05rem; }
+.ui-selected { border: 2px solid #F39814; }
+.animateFigcaption {
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-name: cssAnimation;
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    from { -webkit-transform: rotate(-360deg) scale(2); }
+    to { -webkit-transform: rotate(0deg) scale(1); }
+
+    from { -moz-transform: rotate(-360deg) scale(2); }
+    to { -moz-transform: rotate(0deg) scale(1); }
+}
+
+</style>
+<script language="JavaScript" type="text/javascript" src="../Common/Scripts/common-inner.js"></script>
+
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script>
+
+
+
+</html>
