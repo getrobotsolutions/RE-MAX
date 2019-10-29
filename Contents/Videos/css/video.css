@@ -1,5 +1,5 @@
 .main-content{
-  padding-top: 20px;
+  padding-top: 170px;
 }
   .wrap{   
     /*height: 1650px;*/
@@ -12,8 +12,11 @@
     width: 465px;   
     margin: 0px;
   }
-  .product-box img{
+  .product-box img:first-child{
     width: 430px;
+    -webkit-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
   }
   .products-box{height: 330px;}
  #dialog-overlay1 {
@@ -147,6 +150,6 @@ a.button:hover {
   padding: 12px 0;
   background-color: #e01c2f;
   -webkit-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
 }
