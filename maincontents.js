@@ -183,16 +183,19 @@ function OnJoystickControlled(strPara){
 var textArray = new Array( );
 textArray[1]="NO FEES";
 textArray[2]="TECHNOLOGY";
-var i=2;
+var i=1;
+
 var myVar = setInterval(changeText, 5000);
 
 function changeText() { 
 
-    $('#changetext p').fadeOut(1000, function() {
-        $(this).html('<p>' + textArray[i] + '</p>').fadeIn(1000);
-        if (i=2) 
+    $('#changetext').fadeOut(1000, function() {
+        if (i==2) 
             i=1;
         else
             i=2;
+        $(this).html('<p>' + textArray[i] + '</p>').fadeIn(1000);
+        //alert(i);
+        
     });
 }
