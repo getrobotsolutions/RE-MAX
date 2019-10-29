@@ -237,9 +237,10 @@ position: absolute;
 #changetext{
 	font-family: aileron;
 	position: absolute;
-    bottom: 115px;
+    bottom: 80px;
     width: 1040px;
-    font-size: 110px;
+    font-size: 100px;
     font-weight: bold;
     color: #152a6b;
+        line-height: 100px;
 }

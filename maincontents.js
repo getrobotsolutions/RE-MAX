@@ -183,18 +183,33 @@ function OnJoystickControlled(strPara){
 var textArray = new Array( );
 textArray[1]="NO FEES";
 textArray[2]="TECHNOLOGY";
-var i=1;
+textArray[3]="Education";
+textArray[4]="Leads"; 
+textArray[5]="Robots"; 
+textArray[6]="Charity";
+textArray[7]="Guidance";
+textArray[8]="The Best";
+textArray[9]="Entrepreneurial spirit";
+textArray[10]="Support";
+textArray[11]="Competitive splits";
+ 
+
+
+
+
+var i=2;
 
 var myVar = setInterval(changeText, 5000);
 
 function changeText() { 
 
     $('#changetext').fadeOut(1000, function() {
-        if (i==2) 
+        if (i>11) 
             i=1;
-        else
-            i=2;
+        /*else
+            i=2;*/
         $(this).html('<p>' + textArray[i] + '</p>').fadeIn(1000);
+        i++;
         //alert(i);
         
     });
