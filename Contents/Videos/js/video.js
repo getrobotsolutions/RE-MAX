@@ -24,6 +24,16 @@ $(document).ready(function(){
       $('#dialog-overlay1, #dialog-box1').hide();   
       return false;
     });
+   $('#tradeshow-video, #playbutton').click(function(){
+    var vid=document.getElementById('tradeshow-video');
+    if (vid.paused) {
+          vid.play();
+          $('#playbutton').attr('src','images/pause.png');
+        } else {
+          vid.pause();
+          $('#playbutton').attr('src','images/play.png');       
+        }
+   });
 });
 function vidplay() {
        var video = document.getElementById("myVideo");

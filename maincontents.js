@@ -181,8 +181,8 @@ function OnJoystickControlled(strPara){
 }
 
 var textArray = new Array( );
-textArray[1]="NO FEES";
-textArray[2]="TECHNOLOGY";
+textArray[1]="No Fees";
+textArray[2]="Technology";
 textArray[3]="Education";
 textArray[4]="Leads"; 
 textArray[5]="Robots"; 

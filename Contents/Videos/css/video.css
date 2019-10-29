@@ -3,7 +3,7 @@
 }
   .wrap{   
     /*height: 1650px;*/
-   width: 943px;
+   width: 1080px;
     margin: 0 auto;
     border-radius: 10px;
   }
@@ -152,4 +152,10 @@ a.button:hover {
   -webkit-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 22px 4px rgba(0,0,0,0.75);
+}
+#playbutton{
+  width: 100px;
+      position: relative;
+    left: 490px;
+
 }
