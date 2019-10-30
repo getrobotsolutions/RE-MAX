@@ -172,7 +172,7 @@ function OnJoystickControlled(strPara){
     if(btn_info[3] == '1'){
         //window.external.ChangeLanguage("en-us");
         SetVolume(1);
-       window.external.PlaySpeech("Want to become a robot?");
+       window.external.PlaySpeech("I'm thirsty, can you buy me a drink?");
         
     }
     if(btn_info[4] == '1'){
